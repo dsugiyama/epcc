@@ -156,7 +156,8 @@ void testfor() {
 void testpfor() {
     int i, j;
     for (j = 0; j < innerreps; j++) {
-#pragma omp parallel for
+#pragma omp parallel
+#pragma omp for
 	for (i = 0; i < nthreads; i++) {
 	    delay(delaylength);
 	}
@@ -213,7 +214,8 @@ void testlock() {
 
 void testorder() {
     int j;
-#pragma omp parallel for ordered schedule (static,1)
+#pragma omp parallel
+#pragma omp for ordered schedule (static,1)
     for (j = 0; j < (int)innerreps; j++) {
 #pragma omp ordered
 	delay(delaylength);
