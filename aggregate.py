@@ -17,4 +17,5 @@ keyfunc = lambda t: t[0]
 results = itertools.groupby(sorted(tuples, key=keyfunc), keyfunc)
 
 for k, g in results:
-    print k + ": " + str(min([t[1] for t in g]))
+    l = [t[1] for t in g]
+    print k + ": " + str(sum(l) / len(l))
