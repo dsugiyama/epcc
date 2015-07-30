@@ -3,8 +3,8 @@
 # Uncomment the following line to use OpenMP 3.0 features
 #OMPFLAG = -DOMPVER2 -DOMPVER3
 
-CC = ompcc
+CC = ${HOME}/inst/omni-compiler/bin/ompcc
 CFLAGS = -mmic -O3 -ipo -std=gnu99 -lm
 LDFLAGS = -mmic -O3 -ipo -lm
-CPP = ompcc -E
+CPP = ${HOME}/inst/omni-compiler/bin/ompcc -E
 LIBS = 
