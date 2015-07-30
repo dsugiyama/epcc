@@ -1,4 +1,4 @@
-nth="240 480 960"
+nth="60 240"
 
 bench=$1
 niter=$2
@@ -17,6 +17,6 @@ for n in $nth; do
 
     echo "Omni (Argobots)"
     python aggregate.py $niter $mic -- \
-        OMPC_NUM_PROCS=240 OMPC_NUM_FORK=$n ./$bench-abt
+        OMPC_NUM_PROCS=$n OMPC_NUM_FORK=$n ./$bench-abt
     echo
 done
