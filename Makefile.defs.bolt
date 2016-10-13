@@ -4,7 +4,7 @@
 #OMPFLAG = -DOMPVER2 -DOMPVER3
 
 CC = clang
-CFLAGS = -fopenmp -O3 -flto -std=gnu99 -lm
-LDFLAGS = -fopenmp -O3 -flto -lm
+CFLAGS = -fopenmp -O3 -flto -std=gnu99 -lm -I${HOME}/inst/bolt-runtime/include
+LDFLAGS = -fopenmp -O3 -flto -lm -L${HOME}/inst/bolt-runtime/lib -lomp
 CPP = clang -E
 LIBS =
