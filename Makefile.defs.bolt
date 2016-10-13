@@ -3,8 +3,8 @@
 # Uncomment the following line to use OpenMP 3.0 features
 #OMPFLAG = -DOMPVER2 -DOMPVER3
 
-CC = icc
-CFLAGS = -qopenmp -xMIC-AVX512 -O3 -ipo -std=gnu99 -lm
-LDFLAGS = -qopenmp -xMIC-AVX512 -O3 -ipo -lm
-CPP = icc -E
+CC = clang
+CFLAGS = -fopenmp -O3 -flto -std=gnu99 -lm
+LDFLAGS = -fopenmp -O3 -flto -lm
+CPP = clang -E
 LIBS =
